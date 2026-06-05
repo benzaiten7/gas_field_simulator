@@ -2,15 +2,16 @@ from src.state import NodeState
 
 
 class DCS:
+    # повышает давление газа, на входе давление ниже, на выходе выше
     def __init__(self, CR: float, P_line: float, q_ext: float = 0.0):
-        if CR < 1.0:
+        if CR < 1.0:  # проверка, т.к. степень сжатия не может быть меньше 1 
             raise ValueError("CR must be >= 1.0")
         self.CR = CR
         self.P_line = P_line
         self.q_ext = q_ext
 
     def P_in(self) -> float:
-        if self.CR == 1.0:
+        if self.CR == 1.0:  # если степень сжатия 1, то компрессор не работает
             return self.P_line
         return self.P_line / self.CR
 

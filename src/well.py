@@ -7,7 +7,7 @@ from src.pipe import Pipe
 
 
 class Well:
-    BETA = 0.00852702
+    BETA = 0.00852702  # коэффициент пересчета единиц для измерения для формулы Дарси
 
     def __init__(self, fluid: Fluid, k: float, h: float, re: float, rw: float, pipe: Pipe | None = None):
         self.fluid = fluid

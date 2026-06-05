@@ -13,7 +13,7 @@ from src.well import Well
 class FieldSimulator:
     def __init__(self, reservoir: Reservoir, wells: list[Well], shlyf: Pipe, dcs: DCS):
         if len(wells) != 3:
-            raise ValueError("simulator requires exactly three wells")
+            raise ValueError("Симулятор требует ровно 3 скважины")
         self.reservoir = reservoir
         self.wells = wells
         self.shlyf = shlyf
